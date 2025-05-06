@@ -17,7 +17,7 @@ import { Server } from "socket.io";
     @SubscribeMessage('newMessage')
             onNewMessage(@MessageBody() body: any) {
                 console.log(body);
-                this.server.emit('newMessage', {
+                this.server.emit('onMessage', {
                     msg: 'New Message',
                     content: body,
                 });
